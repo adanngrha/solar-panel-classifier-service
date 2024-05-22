@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: solar-panel-classifier-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: us-central1-docker.pkg.dev/solar-panel-classifier/classifier/classifier:latest
+          env:
+          ports:
+            - containerPort: 4000
